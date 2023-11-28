@@ -12,9 +12,7 @@ import '../../../shared_widgets/base_customs/go_back_appbar.dart';
 
 class PaycheckDetailsPage extends StatelessWidget {
 
-  final ProfessionalInformationBloc? professionalInformationBloc;
-
-  const PaycheckDetailsPage({Key? key, this.professionalInformationBloc,
+  const PaycheckDetailsPage({Key? key,
   }) : super(key: key);
 
   @override
@@ -26,18 +24,7 @@ class PaycheckDetailsPage extends StatelessWidget {
 
       body:
 
-      MultiBlocProvider(
-
-          providers: [
-            BlocProvider<ProfessionalInformationBloc>(
-              create: (context) =>
-      professionalInformationBloc ??
-                  ProfessionalInformationBloc(
-                loadRightAway:true,
-              ),
-            ),
-          ],
-          child: PaycheckDetailsBody()),
+      PaycheckDetailsBody(),
       bottomNavigationBar: const DashboardNavigationBar(),
       drawer: const Drawer(),
     );

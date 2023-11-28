@@ -20,8 +20,6 @@ class PaycheckDetailsRoute extends AppRoute {
   Widget getPage(BuildContext context, GoRouterState state) {
 
     return PaycheckDetailsPage(
-      professionalInformationBloc
-          : state.extraIfData<ProfessionalInformationBloc>(),
     );
   }
 

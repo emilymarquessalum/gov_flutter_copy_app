@@ -20,55 +20,17 @@ class _DashboardPageState extends State<DashboardPage> {
 
 
 
-  late ProfessionalInformationBloc professionalInformationBloc;
-
-
-
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
 
-
     context.read<PaycheckInformationBloc>().add(
       LoadPaycheckInformationEvent()
     );
-    professionalInformationBloc =  ProfessionalInformationBloc(
-      loadRightAway: true,
-    );
 
-
-    GoRouter.of(context).routerDelegate.addListener(
-      updateOnPop
-    );
-
-  }
-
-
-  updateOnPop() {
-
-    debugPrint("updateOnPop");
-
-    //debugPrint("previousRoute: ${previousRoute?.settings.name}");
-
-
-    if(GoRouter.of(context).routerDelegate.currentConfiguration.uri.path
-        == DashboardRoute().routePath) {
-
-
-      //paycheckInformationBloc.add(LoadPaycheckInformationEvent());
-    }
-
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    //paycheckInformationBloc.close();
-    professionalInformationBloc.close();
-    GoRouter.of(context).routerDelegate.removeListener(
-        updateOnPop
+    context.read<ProfessionalInformationBloc>().add(
+      LoadProfessionalInformationEvent()
     );
 
   }
@@ -79,18 +41,7 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
 
       appBar: const CustomAppBar(),
-      body: MultiBlocProvider(
-        providers: [
-          BlocProvider<ProfessionalInformationBloc>.value(
-            value: professionalInformationBloc,
-          ),
-
-        ],
-        child: Container(
-
-
-            child: DashboardBody()),
-      ),
+      body: DashboardBody(),
       bottomNavigationBar: const DashboardNavigationBar(),
       drawer: const Drawer(),
     );

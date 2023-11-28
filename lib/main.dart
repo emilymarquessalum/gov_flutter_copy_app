@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
-import 'package:gov_flutter_copy_app/models/singletons/user_session/user_session.dart';
 import 'package:gov_flutter_copy_app/routes/router.dart';
 import 'package:gov_flutter_copy_app/views/dashboard/dashboard_route.dart';
 import 'package:gov_flutter_copy_app/views/paycheck_information/bloc/paycheck_information_bloc.dart';
+
+import 'views/professional_information/bloc/professional_information_bloc.dart';
 
 void main() {
 
@@ -31,12 +32,20 @@ class _MyAppState extends State<MyApp> {
   PaycheckInformationBloc _paycheckInformationBloc = PaycheckInformationBloc(
   );
 
+  ProfessionalInformationBloc _professionalInformationBloc =
+      ProfessionalInformationBloc();
+
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => _paycheckInformationBloc),
+        BlocProvider.value(value: _paycheckInformationBloc),
+
+        BlocProvider<ProfessionalInformationBloc>.value(
+          value: _professionalInformationBloc,
+        ),
       ],
       child: MaterialApp.router(
         title: 'SOU.GOB.BR.EMILY.SALUM',
