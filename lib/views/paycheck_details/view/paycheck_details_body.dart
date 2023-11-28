@@ -17,12 +17,12 @@ class PaycheckDetailsBody extends StatelessWidget {
 
     return RefreshIndicator(
       onRefresh: () async {
+
         BlocProvider.of<PaycheckInformationBloc>(context)
             .add(UpdatePaycheckInformationEvent());
         BlocProvider.of<ProfessionalInformationBloc>(context)
             .add(
             UpdateProfessionalInformationEvent());
-
 
         return await Future.delayed(const Duration(seconds: 1));
       },

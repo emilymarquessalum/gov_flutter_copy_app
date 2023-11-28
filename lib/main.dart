@@ -42,7 +42,6 @@ class _MyAppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider.value(value: _paycheckInformationBloc),
-
         BlocProvider<ProfessionalInformationBloc>.value(
           value: _professionalInformationBloc,
         ),

@@ -20,19 +20,32 @@ class _DashboardPageState extends State<DashboardPage> {
 
 
 
+  late ProfessionalInformationBloc professionalInformationBloc;
+
+
+
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
 
+
     context.read<PaycheckInformationBloc>().add(
       LoadPaycheckInformationEvent()
     );
-
-    context.read<ProfessionalInformationBloc>().add(
-      LoadProfessionalInformationEvent()
+    professionalInformationBloc =  ProfessionalInformationBloc(
+      loadRightAway: true,
     );
 
+
+  }
+
+
+  @override
+  void dispose() {
+    super.dispose(); 
+    professionalInformationBloc.close();
   }
 
 
@@ -41,7 +54,14 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
 
       appBar: const CustomAppBar(),
-      body: DashboardBody(),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider<ProfessionalInformationBloc>.value(
+            value: professionalInformationBloc,
+          ),
+        ],
+        child: DashboardBody(),
+      ),
       bottomNavigationBar: const DashboardNavigationBar(),
       drawer: const Drawer(),
     );

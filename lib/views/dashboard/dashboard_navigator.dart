@@ -17,6 +17,7 @@ class DashboardNavigator extends AppNavigator {
   navigateToDetails(BuildContext context) {
 
     GoRouter.of(context).push(PaycheckDetailsRoute().routePath,
+      extra: context.read<ProfessionalInformationBloc>()
     );
   }
 
