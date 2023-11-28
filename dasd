@@ -1,0 +1,11 @@
+[33mcommit 4b6652df408a6f89223ff673fbf7df969f82009b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Emily Salum <65673894+emilymarquessalum@users.noreply.github.com>
+Date:   Mon Nov 27 14:43:07 2023 -0300
+
+    stateless interactor implementation - no navigation update
+
+[33mcommit e82fd92bfc21741b94e0196fdc9f55ccaa7df2f7[m
+Author: Emily Salum <65673894+emilymarquessalum@users.noreply.github.com>
+Date:   Sat Nov 25 10:47:36 2023 -0300
+
+    initial commit - with cache implementation
