@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
+      providers: [ 
         BlocProvider.value(value: _paycheckInformationBloc),
         BlocProvider<ProfessionalInformationBloc>.value(
           value: _professionalInformationBloc,
@@ -49,8 +49,6 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp.router(
         title: 'SOU.GOB.BR.EMILY.SALUM',
         debugShowCheckedModeBanner: false,
-      
-      
           routerConfig: _appRouter,
         theme: ThemeData(
         

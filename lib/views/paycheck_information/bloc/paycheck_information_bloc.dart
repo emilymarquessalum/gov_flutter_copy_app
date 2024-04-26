@@ -24,11 +24,10 @@ class PaycheckInformationBloc extends Bloc<PaycheckInformationEvent, PaycheckInf
   PaycheckInformationBloc({bool loadRightAway=false}) :
         super(PaycheckInformationInitial()) {
 
-    on<UpdatePaycheckInformationEvent>((event, emit) async {
-      await _loadInformation(emit,
-      causeUpdate: true);
-    });
-    on<LoadPaycheckInformationEvent>((event, emit) async {
+    on<UpdatePaycheckInformationEvent>(_onUpdate);
+
+    on<LoadPaycheckInformationEvent>(
+            (event, emit) async {
       await _loadInformation(emit);
     });
 
@@ -41,6 +40,10 @@ class PaycheckInformationBloc extends Bloc<PaycheckInformationEvent, PaycheckInf
       add(LoadPaycheckInformationEvent());
     }
 
+  }
+
+  _onUpdate(event, emit) {
+    _loadInformation(emit, causeUpdate: true);
   }
 
   Future<void> _loadInformation(Emitter<PaycheckInformationState> emit, {

@@ -12,6 +12,7 @@ class PaycheckTypeStyle {
 
   PaycheckTypeStyle({required this.type});
 
+  // labelling
   String get labelFromType => {
     PaycheckInformationType.brute: "Bruto",
     PaycheckInformationType.liquid: "Liquido",
@@ -27,6 +28,7 @@ class PaycheckTypeStyle {
 
 
 
+  // graphical
   IconData? get iconData => {
     PaycheckInformationType.brute: Icons.add_circle,
     PaycheckInformationType.liquid: Icons.remove_circle,

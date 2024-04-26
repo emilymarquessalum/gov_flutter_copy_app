@@ -9,6 +9,7 @@ import 'package:gov_flutter_copy_app/views/dashboard/view/dashboard_navigation_b
 import 'package:gov_flutter_copy_app/views/paycheck_information/bloc/paycheck_information_bloc.dart';
 import 'package:gov_flutter_copy_app/views/professional_information/bloc/professional_information_bloc.dart';
 
+
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key, }) : super(key: key);
 
@@ -51,6 +52,8 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
 
       appBar: const CustomAppBar(),

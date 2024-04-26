@@ -11,6 +11,7 @@ import 'package:gov_flutter_copy_app/views/paycheck_details/paycheck_details_rou
 
 GoRouter SystemAppRouter({required String initialRoute}) {
 
+
   return GoRouter(
     initialLocation: initialRoute,
     routes: [
@@ -23,11 +24,10 @@ GoRouter SystemAppRouter({required String initialRoute}) {
 
 }
 
-
+// Rotas do Módulo
 List<AppRoute> getModuleRoutes() => [
 
   DashboardRoute(),
-
   PaycheckDetailsRoute(),
   //PaycheckDetailsRoute(),
 ];
