@@ -1,16 +1,7 @@
-# gov_flutter_copy_app
+# Gov Clone
 
-A new Flutter project.
+Aplicativo do Gov mobile recriado com BLoC, Go Router, GetIt e Dio. 
 
-## Getting Started
+![image](https://github.com/user-attachments/assets/0c516efa-e12a-46a3-9b86-ea82fb866c21)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://github.com/user-attachments/assets/f4e80653-6b7b-449d-8289-beaee1f9914b)
